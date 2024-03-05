@@ -1,5 +1,7 @@
 <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#">Hello <h3>{{fullName}}</h3></a>
+    <!-- <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#">Hello <h3>{{fullName}}</h3></a> -->
+
+    <img src="https://freepngdesign.com/content/uploads/images/jaguar-metallic-golden-logo-6443.png" alt="">
     <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse"
         data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -8,15 +10,30 @@
         aria-label="Search">
     <div class="navbar-nav">
         <div class="nav-item text-nowrap">
-            <a style="background: red;
+           
+            <button mat-icon-button [matMenuTriggerFor]="menu">
+                <mat-icon>account_circle</mat-icon>
+              </button>
+              <mat-menu #menu="matMenu">
+                <!-- <h3>{{fullName}}</h3> -->
+                <button mat-menu-item (click)="logout()">
+                  <mat-icon>logout</mat-icon>
+                  <span>Log Out</span>
+                </button>
+               
+              </mat-menu>
+            <!-- <i class="fa fa-user" aria-hidden="true"></i> -->
+
+            <!-- <i class="fa-regular fa-user"></i> -->
+            <!-- <a style="background: red;
             color: #fff;
             border-radius: 4px;
-            margin: 10px;" class="nav-link px-3 cursor-pointer" (click)="logout()">Sign out</a>
+            margin: 10px;" class="nav-link px-3 cursor-pointer" (click)="logout()">Sign out</a>  -->
         </div>
     </div>
 </header>
 
-<div class="container-fluid">
+<div class="container-fluid" id="mySidebar">
     <div class="row">
         <ng-container *ngIf="role === 'User'">
             <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
@@ -171,7 +188,7 @@
             </nav>
         </ng-container>
 
-        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" id="main">
             <div class="chartjs-size-monitor">
                 <div class="chartjs-size-monitor-expand">
                     <div class=""></div>

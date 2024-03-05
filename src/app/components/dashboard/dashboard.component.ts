@@ -1,5 +1,6 @@
 // 
 
+import { state, style, trigger } from "@angular/animations";
 import { Component, OnInit } from "@angular/core";
 import { AuthService } from "src/app/services/auth.service";
 import { UserstoreService } from "src/app/services/userstore.service";
@@ -9,7 +10,8 @@ import { UserstoreService } from "src/app/services/userstore.service";
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  styleUrls: ['./dashboard.component.css'],
+ 
 })
 export class DashboardComponent implements OnInit {
 
@@ -37,5 +39,7 @@ export class DashboardComponent implements OnInit {
   logout(){
     this.auth.signOut();
   }
+ 
 
+  
 }
