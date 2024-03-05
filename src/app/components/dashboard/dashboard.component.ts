@@ -1,5 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'src/app/services/auth.service';
+// 
+
+import { Component, OnInit } from "@angular/core";
+import { AuthService } from "src/app/services/auth.service";
+import { UserstoreService } from "src/app/services/userstore.service";
+
+
 
 @Component({
   selector: 'app-dashboard',
@@ -8,11 +13,29 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private api:AuthService) { }
+  
+  public role!:string;
 
-  ngOnInit(): void {
+  public fullName : string = "";
+  constructor( private auth: AuthService, private userStore: UserstoreService) { }
+
+  ngOnInit() {
+   
+
+    this.userStore.getFullNameFromStore()
+    .subscribe(val=>{
+      const fullNameFromToken = this.auth.getFullNameFromTOken();
+      this.fullName = val || fullNameFromToken
+    });
+
+    this.userStore.getRoleFromStore()
+    .subscribe(val=>{
+      const roleFromToken = this.auth.getRoleFromTOken();
+      this.role = val || roleFromToken;
+    })
   }
   logout(){
-    this.api.signOut();
+    this.auth.signOut();
   }
+
 }

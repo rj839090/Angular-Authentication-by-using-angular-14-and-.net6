@@ -1,0 +1,30 @@
+.bg-img {
+
+    background-image: url('https://images.pexels.com/photos/807598/pexels-photo-807598.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    /* min-height: 380px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: no-repeat; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    position: relative;
+    height: 100vh;
+}
+
+form {
+    /* background-color: #c3acac; */
+    border: 1px solid white;
+    padding: 5px;
+    border-radius: 8px;
+    width: 29rem;
+
+    padding: 15px;
+    color: white;
+}
+
+button.btn.btn-primary.mb-4 {
+    opacity: 0.9;
+}
