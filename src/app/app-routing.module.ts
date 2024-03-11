@@ -5,6 +5,7 @@ import { SignupComponent } from './components/signup/signup.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AuthGuard } from './guards/auth.guard';
 import { EmployeeComponent } from './components/employee/employee.component';
+import { ProductsComponent } from './components/products/products.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -18,7 +19,10 @@ const routes: Routes = [
     children: [
       {
         path: 'employee', component: EmployeeComponent
-      }
+      },
+      {
+        path: 'products', component: ProductsComponent
+      },
     ]
   },
 ];

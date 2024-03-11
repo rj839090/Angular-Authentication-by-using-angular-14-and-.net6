@@ -15,6 +15,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProductsComponent } from './components/products/products.component';
+import { WholeNumberPipe } from './pipe/whole-number.pipe';
+import { HighligtstringDirective } from './directives/highligtstring.directive';
 
 @NgModule({
   declarations: [
@@ -23,6 +26,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SignupComponent,
     DashboardComponent,
     EmployeeComponent,
+    ProductsComponent,
+    WholeNumberPipe,
+    HighligtstringDirective,
    
   ],
   imports: [

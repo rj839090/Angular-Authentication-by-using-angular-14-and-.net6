@@ -1,7 +1,7 @@
 // 
 
 import { state, style, trigger } from "@angular/animations";
-import { Component, OnInit } from "@angular/core";
+import { ChangeDetectorRef, Component, OnInit } from "@angular/core";
 import { AuthService } from "src/app/services/auth.service";
 import { UserstoreService } from "src/app/services/userstore.service";
 
@@ -15,12 +15,12 @@ import { UserstoreService } from "src/app/services/userstore.service";
 })
 export class DashboardComponent implements OnInit {
 
-  
+ 
   public role!:string;
 
   public fullName : string = "";
-  constructor( private auth: AuthService, private userStore: UserstoreService) { }
-
+  constructor( private auth: AuthService, private userStore: UserstoreService,private cdr: ChangeDetectorRef) { }
+  
   ngOnInit() {
    
 
@@ -40,6 +40,6 @@ export class DashboardComponent implements OnInit {
     this.auth.signOut();
   }
  
-
+ 
   
 }
